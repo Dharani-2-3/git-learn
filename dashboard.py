@@ -1,7 +1,4 @@
 import subprocess
-
-branch = "branch-name"
-
 result = subprocess.run(
     ["git", "branch", "-d", branch],
     capture_output=True,
@@ -10,5 +7,7 @@ result = subprocess.run(
 
 if result.returncode == 0:
     print("Branch deleted successfully")
-else:
+elif result.returncode == 1:
     print("Error:", result.stderr)
+else:
+    print("Unexpected result:", result)
