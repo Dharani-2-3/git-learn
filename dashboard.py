@@ -1,7 +1,7 @@
 import subprocess
 result = subprocess.run(
     ["git", "branch", "-d", branch],
-    capture_output=True,
+    capture_output=False,
     text=True
 )
 
