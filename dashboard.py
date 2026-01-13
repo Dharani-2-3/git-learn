@@ -1,8 +1,7 @@
 import subprocess
 result = subprocess.run(
-    ["git", "branch", "-d", branch],
+    ["git", "branch", "-d"],
     capture_output=False,
-    text=True
 )
 
 if result.returncode == 0:
